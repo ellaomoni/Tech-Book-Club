@@ -3,7 +3,7 @@ import Image1 from './assets/image-1.png';
 import Image2 from './assets/image-2.png';
 import Image3 from './assets/image-3.png';
 import HeroImage from './assets/HeroImage.png';
-import icon from './assets/icon.svg';
+import icon from './assets/Icon.svg';
 import { Icon } from '@iconify/react';
 import Image from './assets/Image1.png';
 import ImageTwo from './assets/Image2.png';

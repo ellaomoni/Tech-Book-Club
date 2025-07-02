@@ -7,7 +7,21 @@ import icon from './assets/Icon.svg';
 import { Icon } from '@iconify/react';
 import Image from './assets/Image1.png';
 import ImageTwo from './assets/Image2.png';
+import React, { useState, useRef } from 'react';
+
 const App = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHoveredStarter, setIsHoveredStarter] = useState(false);
+  const [isHoveredPro, setIsHoveredPro] = useState(false);
+  const [isHoveredEnterprise, setIsHoveredEnterprise] = useState(false);
+  const membershipRef = useRef(null);
+
+  const handleReviewMembershipClick = () => {
+    if (membershipRef.current) {
+      membershipRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="hero-grid-bg min-h-screen flex flex-col" >
      <div className='container mx-auto px-6 lg:px-10 pb-16'style={{
@@ -15,7 +29,7 @@ const App = () => {
       backgroundImage: `url(${PatternBg})`,
       backgroundSize: 'auto',
       backgroundRepeat: 'repeat',
-      backgroundPosition: 'center center',
+      backgroundPosition: 'center center'
     }}>
         {/* Header */}
         <div className="flex justify-start items-center gap-4 pt-4 sm:pt-8">
@@ -44,9 +58,19 @@ const App = () => {
               Get curated recommendations, join vibrant discussions, and level up your skills one chapter at a time.
             </p>
             
-            <button className='border-2 border-primary font-martian-mono bg-button-color text-primary h-16 px-6 py-2 rounded-lg mt-8 text-base hover:bg-opacity-90 transition-colors flex items-center justify-center gap-3'>
-              REVIEW MEMBERSHIP OPTIONS 
-              <Icon icon="hugeicons:arrow-down-02" className='inline-block ml-2' width={20} height={20} />
+            <button
+              className="border-2 border-primary font-martian-mono bg-button-color text-primary h-16 px-6 py-2 rounded-lg mt-8 text-base transition-colors flex items-center justify-center gap-3"
+              style={{
+                background: isHovered ? 'linear-gradient(90deg, #FFE2D1 0%, #FFF5EF 100%)' : undefined,
+                color: isHovered ? '#062630' : undefined,
+                borderColor: isHovered ? '#062630' : undefined,
+              }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onClick={handleReviewMembershipClick}
+            >
+              REVIEW MEMBERSHIP OPTIONS
+              <Icon icon="hugeicons:arrow-down-02" className="inline-block ml-2" width={20} height={20} />
             </button>
             
             {/* Profile Images and Stars */}
@@ -58,11 +82,11 @@ const App = () => {
               </div>
               <div className='flex flex-col gap-1 '>
                 <div className='flex text-star'>
-                  <Icon icon="hugeicons:star"width={24} height={24} />
-                  <Icon icon="hugeicons:star"width={24} height={24} />
-                  <Icon icon="hugeicons:star"width={24} height={24} />
-                  <Icon icon="hugeicons:star"width={24} height={24} />
-                  <Icon icon="hugeicons:star"width={24} height={24} />
+                  <Icon icon="twemoji:star"width={24} height={24} />
+                  <Icon icon="twemoji:star"width={24} height={24} />
+                  <Icon icon="twemoji:star"width={24} height={24} />
+                  <Icon icon="twemoji:star"width={24} height={24} />
+                  <Icon icon="twemoji:star"width={24} height={24} />
                 </div>
                 <p className='font-martian-mono text-sm text-neutral-700'>200+ developers joined already</p>
               </div>
@@ -119,9 +143,9 @@ const App = () => {
                 Connect with a community that speaks your language - from Python to TypeScript and everything in between. Our discussions blend technical depth with practical applications.
               </p>
               <div className="flex items-center gap-4 mt-8">
-                  <a href="#" aria-label="Calendar" className="text-gray-600 hover:text-[#062630]"><Icon icon="ion:calendar-clear-outline" width="32" height="32" /></a>
-                  <a href="#" aria-label="GitHub" className="text-gray-600 hover:text-[#062630]"><Icon icon="cib:github" width="32" height="32" /></a>
-                  <a href="#" aria-label="Community" className="text-blue-400 hover:text-blue-500"><Icon icon="ion:people-circle-outline" width="38" height="38" /></a>
+                  <a href="#" aria-label="Calendar" className="text-gray-600 hover:text-[#062630]"><Icon icon="hugeicons:typescript-01" width="32" height="32" /></a>
+                  <a href="#" aria-label="GitHub" className="text-gray-600 hover:text-[#062630]"><Icon icon="hugeicons:github-01" width="32" height="32" /></a>
+                  <a href="#" aria-label="Community" className="text-blue-400 hover:text-blue-500"><Icon icon="hugeicons:react" width="38" height="38" /></a>
               </div>
             </div>
 
@@ -131,6 +155,151 @@ const App = () => {
             </div>
             
           </div>
+        </div>
+      </section>
+      {/* Fourth Section: Your tech reading journey */}
+      <section className="py-20 bg-white">
+        <div className="bg-[#FAF5F3] rounded-2xl mx-auto p-16" style={{
+      backgroundColor: '#FAF5F3', 
+      backgroundImage: `url(${PatternBg})`,
+      backgroundSize: 'auto',
+      backgroundRepeat: 'repeat',
+      backgroundPosition: 'center center',
+      maxWidth: '1170px',
+      maxHeight: '454px'
+    }}>
+            <h2 className="font-martian-mono text-3xl sm:text-4xl font-bold text-[#062630] tracking-tight text-center">
+                Your tech reading journey
+            </h2>
+            <div className="relative mt-12 flex justify-center">
+                {/* Steps */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 w-full">
+                    
+                    {/* Step 1 */}
+                    <div className="text-center">
+                        <div className="flex items-center justify-center w-10 h-10 mx-auto border-2 border-[#062630] rounded-md font-martian-mono font-bold">1</div>
+                        <p className="mt-4 font-inter">Choose your membership tier</p>
+                    </div>
+
+                    {/* Step 2 */}
+                    <div className="text-center">
+                        <div className="flex items-center justify-center w-10 h-10 mx-auto border-2 border-[#062630] rounded-md font-martian-mono font-bold">2</div>
+                        <p className="mt-4 font-inter">Get your monthly book selection</p>
+                    </div>
+
+                    {/* Step 3 */}
+                    <div className="text-center">
+                        <div className="flex items-center justify-center w-10 h-10 mx-auto border-2 border-[#062630] rounded-md font-martian-mono font-bold">3</div>
+                        <p className="mt-4 font-inter">Join our discussion forums</p>
+                    </div>
+
+                    {/* Step 4 */}
+                    <div className="text-center">
+                        <div className="flex items-center justify-center w-10 h-10 mx-auto border-2 border-[#062630] rounded-md font-martian-mono font-bold">4</div>
+                        <p className="mt-4 font-inter">Attend exclusive meetups</p>
+                    </div>
+                </div>
+                
+                {/* Connecting Arrows for larger screens */}
+                <div className="absolute top-5 left-0 w-full h-full hidden lg:flex justify-center items-start pointer-events-none">
+                    <div className="w-full max-w-4xl flex justify-around">
+                        <div className="w-1/4"></div>
+                        <div className="w-1/4 flex justify-center journey-arrow -ml-4">
+                            <Icon icon="ph:arrow-curved-right-thin" width="48" height="48" />
+                        </div>
+                        <div className="w-1/4 flex justify-center journey-arrow">
+                             <Icon icon="ph:arrow-curved-right-thin" width="48" height="48" />
+                        </div>
+                        <div className="w-1/4 flex justify-center journey-arrow -mr-4">
+                             <Icon icon="ph:arrow-curved-right-thin" width="48" height="48" />
+                        </div>
+                         <div className="w-1/4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+      {/* Fifth Section: Membership Options & Testimonial */}
+      <section className="py-20 bg-white" ref={membershipRef}>
+        <div className="container mx-auto px-6 lg:px-10">
+            <h2 className="font-martian-mono text-3xl sm:text-4xl font-bold text-[#062630] tracking-tight text-center">
+                Membership options
+            </h2>
+
+            {/* Pricing Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
+                {/* Starter Plan */}
+                <div className="border border-gray-200 rounded-lg p-8 flex flex-col">
+                    <h3 className="font-martian-mono text-2xl font-bold">Starter</h3>
+                    <p className="font-inter text-gray-500 mt-2"><span className="text-4xl font-bold text-[#062630]">$19</span> /month</p>
+                    <ul className="space-y-4 mt-8 font-inter flex-grow">
+                        <li className="flex items-center gap-3"><Icon icon="hugeicons:checkmark-square-01" className="text-[#FEA36F]" width={22} height={22}/>1 book/month</li>
+                        <li className="flex items-center gap-3"><Icon icon="hugeicons:checkmark-square-01" className="text-[#FEA36F]" width={22} height={22}/>Online forums</li>
+                    </ul>
+                    <button className="w-full mt-8 border-2 bg-button-color border-[#062630] text-[#062630] font-martian-mono font-bold py-3 rounded-lg hover:text-white transition-colors"
+                    style={{
+                background: isHoveredStarter ? 'linear-gradient(90deg, #FFE2D1 0%, #FFF5EF 100%)' : undefined,
+                color: isHoveredStarter ? '#062630' : undefined,
+                borderColor: isHoveredStarter ? '#062630' : undefined,
+              }}
+              onMouseEnter={() => setIsHoveredStarter(true)}
+              onMouseLeave={() => setIsHoveredStarter(false)}
+            >SUBSCRIBE NOW</button>
+                </div>
+
+                {/* Pro Plan */}
+                <div className="border-2 border-[#062630] bg-[#FAF5F3] rounded-lg p-8 flex flex-col shadow-lg">
+                    <h3 className="font-martian-mono text-2xl font-bold">Pro</h3>
+                    <p className="font-inter text-gray-500 mt-2"><span className="text-4xl font-bold text-[#062630]">$29</span> /month</p>
+                    <ul className="space-y-4 mt-8 font-inter flex-grow">
+                        <li className="flex items-center gap-3"><Icon icon="hugeicons:checkmark-square-01" className="text-[#FEA36F]" width={22} height={22}/>2 books/month</li>
+                        <li className="flex items-center gap-3"><Icon icon="hugeicons:checkmark-square-01" className="text-[#FEA36F]" width={22} height={22}/>Virtual meetups</li>
+                    </ul>
+                    <button className="w-full mt-8 border-2 border-[#062630] bg-button-color text-white font-martian-mono font-bold py-3 rounded-lg hover:bg-opacity-90 transition-colors"
+                    style={{
+                        background: isHoveredPro ? 'linear-gradient(90deg, #FFE2D1 0%, #FFF5EF 100%)' : undefined,
+                        color: isHoveredPro ? '#062630' : undefined,
+                        borderColor: isHoveredPro ? '#062630' : undefined,
+                      }}
+              onMouseEnter={() => setIsHoveredPro(true)}
+              onMouseLeave={() => setIsHoveredPro(false)}
+            >SUBSCRIBE NOW</button>
+                </div>
+
+                {/* Enterprise Plan */}
+                <div className="border border-gray-200 rounded-lg p-8 flex flex-col">
+                    <h3 className="font-martian-mono text-2xl font-bold">Enterprise</h3>
+                    <p className="font-inter text-gray-500 mt-2"><span className="text-4xl font-bold text-[#062630]">Custom</span></p>
+                     <ul className="space-y-4 mt-8 font-inter flex-grow">
+                        <li className="flex items-center gap-3"><Icon icon="hugeicons:checkmark-square-01" className="text-[#FEA36F]" width={22} height={22}/>Team access</li>
+                        <li className="flex items-center gap-3"><Icon icon="hugeicons:checkmark-square-01" className="text-[#FEA36F]" width={22} height={22}/>Private sessions</li>
+                    </ul>
+                    <button className="w-full mt-8 border-2 bg-button-color border-[#062630] text-[#062630] font-martian-mono font-bold py-3 rounded-lg hover:text-white transition-colors"
+                    style={{
+                        background: isHoveredEnterprise ? 'linear-gradient(90deg, #FFE2D1 0%, #FFF5EF 100%)' : undefined,
+                        color: isHoveredEnterprise ? '#062630' : undefined,
+                        borderColor: isHoveredEnterprise ? '#062630' : undefined,
+                       }}
+                      onMouseEnter={() => setIsHoveredEnterprise(true)}
+                      onMouseLeave={() => setIsHoveredEnterprise(false)}
+            >TALK TO US</button>
+                </div>
+            </div>
+
+            {/* Testimonial */}
+            <div className="mt-20 text-center max-w-3xl mx-auto">
+                <div className="flex justify-center gap-1 text-star">
+                    <Icon icon="twemoji:star" width={24} height={24} />
+                    <Icon icon="twemoji:star" width={24} height={24} />
+                    <Icon icon="twemoji:star" width={24} height={24} />
+                    <Icon icon="twemoji:star" width={24} height={24} />
+                    <Icon icon="twemoji:star" width={24} height={24} />
+                </div>
+                <blockquote className="mt-6 font-martian-mono text-2xl font-bold leading-relaxed">
+                    "This book club transformed my technical reading from a solitary activity into an enriching community experience. The discussions are gold!"
+                </blockquote>
+                <p className="mt-6 font-inter text-gray-600">Sarah Chen, Software Architect</p>
+            </div>
         </div>
       </section>
     </div>

@@ -229,7 +229,7 @@ const App = () => {
             {/* Pricing Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
                 {/* Starter Plan */}
-                <div className="border border-gray-200 rounded-lg p-8 flex flex-col">
+                <div className="border border-[#E6E1DF] rounded-lg p-8 flex flex-col">
                     <h3 className="font-martian-mono text-2xl font-bold">Starter</h3>
                     <p className="font-inter text-gray-500 mt-2"><span className="text-4xl font-bold text-[#062630]">$19</span> /month</p>
                     <ul className="space-y-4 mt-8 font-inter flex-grow">
@@ -248,7 +248,7 @@ const App = () => {
                 </div>
 
                 {/* Pro Plan */}
-                <div className="border-2 border-[#062630] bg-[#FAF5F3] rounded-lg p-8 flex flex-col shadow-lg">
+                <div className="border-2 border-[#E6E1DF] bg-[#FAF5F3] rounded-lg p-8 flex flex-col shadow-lg">
                     <h3 className="font-martian-mono text-2xl font-bold">Pro</h3>
                     <p className="font-inter text-gray-500 mt-2"><span className="text-4xl font-bold text-[#062630]">$29</span> /month</p>
                     <ul className="space-y-4 mt-8 font-inter flex-grow">
@@ -267,7 +267,7 @@ const App = () => {
                 </div>
 
                 {/* Enterprise Plan */}
-                <div className="border border-gray-200 rounded-lg p-8 flex flex-col">
+                <div className="border border-[#E6E1DF] rounded-lg p-8 flex flex-col">
                     <h3 className="font-martian-mono text-2xl font-bold">Enterprise</h3>
                     <p className="font-inter text-gray-500 mt-2"><span className="text-4xl font-bold text-[#062630]">Custom</span></p>
                      <ul className="space-y-4 mt-8 font-inter flex-grow">
@@ -302,6 +302,49 @@ const App = () => {
             </div>
         </div>
       </section>
+      
+      {/* Footer CTA & Final Footer */}
+      <div className="footer-grid-bg text-neutral-0" style={{
+        backgroundColor: '#062630', 
+        backgroundImage: `url(${PatternBg})`,
+        backgroundSize: 'auto',
+        backgroundRepeat: 'repeat',
+        backgroundPosition: 'center center'}}>
+        <section className="container mx-auto px-6 lg:px-10 py-20 text-center">
+            <h2 className="font-martian-mono text-4xl sm:text-5xl font-bold">Ready to debug your reading list?</h2>
+            <button className='border-2 border-white font-martian-mono bg-transparent text-white font-bold h-14 px-6 rounded-lg mt-10 text-base transition-colors flex items-center justify-center gap-3 mx-auto hover:bg-neutral-700'>
+                REVIEW MEMBERSHIP OPTIONS
+                <Icon icon="hugeicons:arrow-up-02" width={20} height={20} />
+            </button>
+            <div className='flex justify-center items-center mt-10 gap-4 sm:gap-6'>
+                <div className='flex flex-row -space-x-4'>
+                  <img className='h-16 w-16 rounded-full border-2 border-button-color' src={Image1} alt="Member 1"/>
+                  <img className='h-16 w-16 rounded-full border-2 border-button-color' src={Image2} alt="Member 2"/>
+                  <img className='h-16 w-16 rounded-full border-2 border-button-color' src={Image3} alt="Member 3"/>
+                </div>
+                <div className='flex flex-col gap-1 items-start'>
+                   <div className="flex text-star">
+                        <Icon icon="twemoji:star" width={24} height={24} />
+                        <Icon icon="twemoji:star" width={24} height={24} />
+                        <Icon icon="twemoji:star" width={24} height={24} />
+                        <Icon icon="twemoji:star" width={24} height={24} />
+                        <Icon icon="twemoji:star" width={24} height={24} />
+                    </div>
+                  <p className='font-martian-mono text-sm text-gray-300'>200+ developers joined already</p>
+                </div>
+            </div>
+        </section>
+        <footer className="">
+          <hr className="border-gray-700 mx-6 lg:mx-10" />
+            <div className="container mx-auto px-6 lg:px-10 py-6 flex justify-between items-center font-inter text-gray-400">
+                <p>&copy; 2024 — Tech Book Club</p>
+                <div className="flex gap-6">
+                    <a href="#" aria-label="Twitter" className="hover:text-white"><Icon icon="hugeicons:new-twitter" width="20" height="20" /></a>
+                    <a href="#" aria-label="LinkedIn" className="hover:text-white"><Icon icon="hugeicons:linkedin-01" width="20" height="20" /></a>
+                </div>
+            </div>
+        </footer>
+      </div>
     </div>
   );
 }

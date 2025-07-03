@@ -312,9 +312,11 @@ const App = () => {
         backgroundPosition: 'center center'}}>
         <section className="container mx-auto px-6 lg:px-10 py-20 text-center">
             <h2 className="font-martian-mono text-4xl sm:text-5xl font-bold">Ready to debug your reading list?</h2>
-            <button className='border-2 border-white font-martian-mono bg-transparent text-white font-bold h-14 px-6 rounded-lg mt-10 text-base transition-colors flex items-center justify-center gap-3 mx-auto hover:bg-neutral-700'>
-                REVIEW MEMBERSHIP OPTIONS
-                <Icon icon="hugeicons:arrow-up-02" width={20} height={20} />
+            <button className='border-2 border-white font-martian-mono bg-transparent text-white font-bold h-14 px-6 rounded-lg mt-10 text-base transition-colors flex items-center justify-center gap-3 mx-auto hover:bg-neutral-700'
+              onClick={handleReviewMembershipClick}
+            >
+              REVIEW MEMBERSHIP OPTIONS
+              <Icon icon="hugeicons:arrow-up-02" width={20} height={20} />
             </button>
             <div className='flex justify-center items-center mt-10 gap-4 sm:gap-6'>
                 <div className='flex flex-row -space-x-4'>

@@ -128,7 +128,7 @@ const App = () => {
           <img className='rounded-lg shadow-xl w-full max-w-xs sm:max-w-md lg:max-w-lg h-auto' src={Image} alt/>
           </div>
             <div>
-              <h2 className="font-martian-mono text-5xl sm:text-3xl lg:text-6xl font-bold text-primary tracking-tight">Read together, grow together</h2>
+              <h2 className="font-martian-mono text-5xl sm:text-3xl lg:text-5xl font-bold text-primary tracking-tight">Read together,<br></br>grow together</h2>
               <ul className="mt-4 sm:mt-6 space-y-2 sm:space-y-4 font-inter text-neutral-700  text-lg sm:text-2xl">
                 <li className="flex items-start gap-2 sm:gap-3">
                   <Icon icon="hugeicons:checkmark-square-01" className="mt-1 flex-shrink-0" width={40} height={40}/>
@@ -158,7 +158,7 @@ const App = () => {
             
             {/* Text Content */}
             <div className="order-2 md:order-1">
-              <h2 className="font-bold text-2xl sm:text-4xl lg:text-6xl text-[#062630] tracking-tight" style={{fontFamily: "'Martian Mono', monospace"}}>
+              <h2 className="font-bold text-2xl sm:text-4xl lg:text-5xl text-[#062630] tracking-tight" style={{fontFamily: "'Martian Mono', monospace"}}>
                 Not your average book <span className="relative inline-block">
                     <span className="relative z-10">club</span>
                     <img src={Circle} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-auto -z-0 transform -rotate-6 pt-4"/>

@@ -10,13 +10,16 @@ export default {
       "primary": "#062630",
       "button-color":"#FFF5EF",
       "star": "#FF9A60",
+      "black": "#000000",
       "neutral": {
         0: "#FFFFFF",
         100: "FAF5F3",
         200: "E6E1DF",
         700: "#385159",
         800: "#AC8850",
-        900: "#A37A44"
+        900: "#A37A44",
+        300: "#007ACC", // Typescript color
+        400: "#00D8FF" // React color
       },
       "light-salmon": {
         50: "FFF5EF",
